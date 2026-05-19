@@ -7,35 +7,69 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body
-    class="bg-white text-gray-800 t-0 r-0 max-w-7xl mx-auto px-6 md:px-12 lg:px-24 pt-6 font-serif"
+    class="bg-white text-gray-800 t-0 r-0 w-full mx-auto px-6 md:px-12 lg:px-24 pt-6 font-serif"
   >
     
+       <nav
+            class="flex items-center justify-between sticky top-0 z-20 bg-white py-4"
+          >   
+     <div class="text-2xl font-bold text-blue-800">
+              Jad<span class="text-red-500">oo</span>
+            </div>
+          <ul class="hidden md:flex gap-8 text-blue-800 text-sm font-medium">
+            
+          <li><a href="#" class="hover:text-red-500">Destinations</a></li>
+          <li><a href="#" class="hover:text-red-500">Hotels</a></li>
+          <li><a href="#" class="hover:text-red-500">Flights</a></li>
+          <li><a href="#" class="hover:text-red-500">Bookings</a></li>
+         
+          <li><a
+                href="#"
+                class="border border-blue-950 px-5 py-2 rounded-md hover:bg-blue-950 hover:text-white"
+                >Sign up</a
+              ></li>
+              <li><a href="#" class="hover:text-red-500">Login</a></li>
+              <li> <select>
+                <option>EN</option>
+              </select>
+      </li>
+          
+        </ul>
 
-    <nav
-      class="flex items-center justify-between sticky top-0 z-20 bg-white py-4"
-    >
-      <div class="text-2xl font-bold text-blue-800">
-        Jad<span class="text-red-500">oo</span>
+
+        <button id="menuBtn" class="md:hidden text-white text-2xl">
+          <span class="block w-6 h-0.5 bg-red-500 mb-1.5"></span>
+          <span class="block w-6 h-0.5 bg-white mb-1.5"></span>
+          <span class="block w-6 h-0.5 bg-white"></span>
+        </button>
       </div>
-      <div
-        class="hidden md:flex items-center space-x-10 text-sm font-medium text-blue-950"
+
+      <ul
+        id="mobileMenu"
+       class="hidden md:hidden text-blue-800 bg-slate-700 mt-2 flex-col gap-4 px-7 py-4"
       >
-        <a href="#" class="hover:text-red-500">Destinations</a>
-        <a href="#" class="hover:text-red-500">Hotels</a>
-        <a href="#" class="hover:text-red-500">Flights</a>
-        <a href="#" class="hover:text-red-500">Bookings</a>
-        <a href="#" class="hover:text-red-500">Login</a>
-        <a
-          href="#"
-          class="border border-blue-950 px-5 py-2 rounded-md hover:bg-blue-950 hover:text-white"
-          >Sign up</a
-        >
-        <select>
-          <option>EN</option>
-        </select>
-      </div>
+        <li><a href="#" class="hover:text-red-500">Destinations</a></li>
+        <li><a href="#" class="hover:text-red-500">Hotels</a></li>
+        <li><a href="#" class="hover:text-red-500">Flights</a></li>
+        <li><a href="#" class="hover:text-red-500">Bookings</a></li>
+        <li><a href="#" class="hover:text-red-500">Login</a></li>
+        <li><a href="#" class="hover:text-red-500">Sign up</a></li>
+      </ul>
     </nav>
+    <script>
+      let menuBtn = document.getElementById("menuBtn");
+      let mobileMenu = document.getElementById("mobileMenu");
 
+      menuBtn.addEventListener("click", toggleMenu);
+
+      function toggleMenu() {
+        if (mobileMenu.classList.contains("hidden")) {
+          mobileMenu.classList.remove("hidden");
+        } else {
+          mobileMenu.classList.add("hidden");
+        }
+      }
+    </script>
     <div class="grid md:grid-cols-2 gap-8 items-center pt-12 pb-24">
       <div class="space-y-4">
         <span class="text-red-500 font-bold text-sm uppercase"
@@ -68,79 +102,75 @@
       </div>
          <div class="relative flex justify-center">
                 <img src="images/traveler.png" alt="Traveler" class="w-full  ">
-                </div>
+          </div>
     </div>
 
-    <section class="w-full mx-auto px-6 md:px-12 lg:px-24 py-16 text-center">
-      <span class="text-gray-500 font-semibold text-xs uppercase mb-4"
-        >Category</span
-      >
-      <h2 class="font-serif text-4xl font-bold text-blue-950 mb-16">
-        We Offer Best Services
-      </h2>
+  <section class="max-w-7xl mx-auto px-6 py-16 text-center">
+        <h4 class="text-xs sm:text-sm font-semibold tracking-widest text-gray-500 uppercase">Category</h4>
+        <h2 class="text-3xl sm:text-5xl font-serif font-bold text-[#181E4B] mt-2 mb-16">We Offer Best Services</h2>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="p-8 rounded-3xl ">
-          <div
-            class="h-16 mx-auto mb-6 flex items-center justify-center text-3xl "
-          >
-            ⛅
-          </div>
-          <h3 class="text-blue-800 font-semibold text-lg mb-3">
-            Calculated Weather
-          </h3>
-          <p class="text-gray-500 text-sm leading-loose">
-            Built mictor singel optimi do buston vanity heed do in it.
-          </p>
-        </div>
-        <div
-          class="p-8 rounded-3xl shadow-2xl transition duration-300 bg-white relative"
-        >
-          <div
-            class="w-16 h-16 mx-auto mb-6 flex items-center justify-center text-3xl text-orange-400"
-          >
-            ✈️
-          </div>
-          <h3 class="text-blue-800 font-semibold text-lg mb-3">Best Flights</h3>
-          <p class="text-gray-500 text-sm leading-loose">
-            Engrossed listening. Pera gee sell they said front for the.
-          </p>
-          <div
-            class="w-[100px] h-[100px] bg-red-800  -bottom-left absolute -bottom-10 -left-10 z-10"
-          ></div>
-        </div>
-        <div
-          class="p-8 rounded-3xl "
-        >
-          <div
-            class="w-16 h-16 mx-auto mb-6 flex items-center justify-center text-3xl text-red-400"
-          >
-            🎤
-          </div>
-          <h3 class="text-blue-800 font-semibold text-lg mb-3">Local Events</h3>
-          <p class="text-gray-500 text-sm leading-loose">
-            Barton vanity itsell do in it. Pretend to meet it engressed
-            listening.
-          </p>
-        </div>
-        <div
-          class="p-8 rounded-3xl"
-        >
-          <div
-            class="w-16 h-16 mx-auto mb-6 flex items-center justify-center text-3xl text-yellow-500"
-          >
-            ⚙️
-          </div>
-          <h3 class="text-blue-800 font-semibold text-lg mb-3">
-            Customization
-          </h3>
-          <p class="text-gray-500 text-sm leading-loose">
-            We deliver outsourced solution services for military customers.
-          </p>
-        </div>
-      </div>
-    </section>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div
+                class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition duration-300 flex flex-col items-center group relative border border-transparent hover:border-gray-100">
+                <div class="text-4xl mb-4">
+                    <img class="size-20" src="images/sattelite-dish.png">
+                </div>
+                <div class="absolute bottom-0 left-0 w-28 h-28 bg-red-500 rounded-tr-3xl -z-20 opacity-0 group-hover:opacity-100 
+                    transition rounded-tl-3xl rounded-br-2xl translate-x-[-30px] translate-y-[30px]">
+                </div>
 
+                <h3 class="text-lg font-semibold text-[#1E1D4C] mb-3">Calculated Weather</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">Built Wicket longer admire do barton vanity itself do
+                    in it.</p>
+                <div class="absolute bottom-0 left-0 w-28 h-28 bg-red-500 rounded-tr-3xl -z-20 opacity-0 group-hover:opacity-100 
+                    transition rounded-tl-3xl rounded-br-2xl translate-x-[-30px] translate-y-[30px]">
+                </div>
+            </div>
+
+           <div
+                class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition duration-300 flex flex-col items-center group relative border border-transparent hover:border-gray-100">
+                <div class="text-4xl mb-4">
+                    <img class="size-20" src="images/airplane.png">
+                </div>
+                <h3 class="text-lg font-semibold text-[#1E1D4C] mb-3">Best Flights</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">Engrossed listening. Park gate sell they west hard for
+                    the.</p>
+                    <div class="absolute bottom-0 left-0 w-28 h-28 bg-red-500 rounded-tr-3xl -z-20 opacity-0 group-hover:opacity-100 
+                    transition rounded-tl-3xl rounded-br-2xl translate-x-[-30px] translate-y-[30px]">
+                </div>
+            </div>
+
+            <div
+                class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition duration-300 flex flex-col items-center group relative border border-transparent hover:border-gray-100">
+                <div class="text-4xl mb-4">
+                    <img class="size-20" src="images/karaoke.png">
+                </div>
+                <h3 class="text-lg font-semibold text-[#1E1D4C] mb-3">Local Events</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">Barton vanity itself do in it. Preferd to men it
+                    engrossed listening.</p>
+
+                <div class="absolute bottom-0 left-0 w-28 h-28 bg-red-500 rounded-tr-3xl -z-20 opacity-0 group-hover:opacity-100 
+                    transition rounded-tl-3xl rounded-br-2xl translate-x-[-30px] translate-y-[30px]">
+                </div>
+            </div>
+
+            <div
+                class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition duration-300 flex flex-col items-center group relative border border-transparent hover:border-gray-100">
+                <div class="text-4xl mb-4">
+                    <img class="size-20" src="images/settings.png">
+                </div>
+                <h3 class="text-lg font-semibold text-[#1E1D4C] mb-3">Customization</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">We deliver outsourced aviation services for military
+                    customers.
+                </p>
+                <div class="absolute bottom-0 left-0 w-28 h-28 bg-red-500 rounded-tr-3xl -z-20 opacity-0 group-hover:opacity-100 
+                    transition rounded-tl-3xl rounded-br-2xl translate-x-[-30px] translate-y-[30px]">
+                </div>
+            </div>
+        </div>
+    </section> 
+
+   
     <section class="w-full mx-auto px-6 md:px-12 lg:px-24 py-16">
       <div class="text-center mb-16">
         <span class="text-gray-500 font-semibold text-xs uppercase mb-4"
@@ -467,9 +497,9 @@
   <div>
 
     <h3 class="font-bold text-lg  ">
-        <img src="images/facebook.png" alt="Facebook icon" class="w-12 h-12 inline-block mr-2"/>
-        <img src="images/instagram.png" alt="Instagram icon" class="w-12 h-12 inline-block mr-2"/>
-        <img src="images/social.png" alt="Social media icon" class="w-12 h-12 inline-block mr-2"/>
+        <img src="images/facebook.png" alt="Facebook icon" class="w-8 h-8 inline-block mr-0"/>
+        <img src="images/instagram.png" alt="Instagram icon" class="w-8 h-8 inline-block mr-0"/>
+        <img src="images/social.png" alt="Social media icon" class="w-8 h-8 inline-block mr-0"/>
       Discover our app
     </h3>
 
